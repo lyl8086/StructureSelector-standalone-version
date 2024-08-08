@@ -392,26 +392,26 @@ sub calc_str {
         close $out_fh;
     }
 
-    if ($parsimony) {
-        # parsimony method
-        my ($pi, $flg) = struct_parser::calc_pi($clsts, $log_prob);
-        open($out_fh, ">$out_path/${dir}pi.tsv") or die "$!";
-        my $ltime = strftime "%Y-%m-%d %H:%M:%S %Z", localtime;
-        print $out_fh "# File generated at $ltime\n";
-        print $out_fh $pi_head;
-        foreach my $k (@K) {
+    # if ($parsimony) {
+        # # parsimony method
+        # my ($pi, $flg) = struct_parser::calc_pi($clsts, $log_prob);
+        # open($out_fh, ">$out_path/${dir}pi.tsv") or die "$!";
+        # my $ltime = strftime "%Y-%m-%d %H:%M:%S %Z", localtime;
+        # print $out_fh "# File generated at $ltime\n";
+        # print $out_fh $pi_head;
+        # foreach my $k (@K) {
 
-            my $a = $pi->{$k}->{'iter'};
-            my $b = $pi->{$k}->{'nr'};
-            my $c = $pi->{$k}->{'sps'};
-            my $d = $pi->{$k}->{'sps_star'};
-            my $e = $pi->{$k}->{'pi'};
-            print $out_fh join("\t", $k, $a, $b, $c, $d, $e, $f), "\n";
+            # my $a = $pi->{$k}->{'iter'};
+            # my $b = $pi->{$k}->{'nr'};
+            # my $c = $pi->{$k}->{'sps'};
+            # my $d = $pi->{$k}->{'sps_star'};
+            # my $e = $pi->{$k}->{'pi'};
+            # print $out_fh join("\t", $k, $a, $b, $c, $d, $e, $f), "\n";
 
-        }
+        # }
 
-        close $out_fh;
-    }
+        # close $out_fh;
+    # }
 
     return $ma; # return Q-matrix.
 }
