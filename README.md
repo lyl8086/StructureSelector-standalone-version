@@ -15,6 +15,17 @@ Usage：perl structure_selector.pl
     -r: remove ghost method, 'avg' or 'med'.
     -h: help.
   ```
+## Example run
+
+for STRUCTURE:
+```
+perl structure_selector.pl -i input_results_folder -c -o .
+```
+
+for ADMIXTURE or other Q-matrix:
+```
+perl structure_selector.pl -i input_results_folder -p popmap.txt -a -c -o .
+```
 
 ## Contact
 
