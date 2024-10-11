@@ -921,7 +921,7 @@ sub parse_struct_new {
 		my $first = 1;my $pop_table = '';
         my $has_run_par = 0;
         open(my $in_fh, "$in_path/$file") or die "$!";
-		if (!$grp&&$first) {open($out_fh_grp, ">$out_path/PopMap_for_admixture") or die "$!";}
+		if ($first) {open($out_fh_grp, ">$out_path/PopMap_for_admixture") or die "$!";}
 		while(<$in_fh>) {
             next if /^$/;
             my $pop_table_cnt = 0;
@@ -1048,7 +1048,8 @@ sub parse_struct_new {
                             push (@indId, $pop); # no pop indicator, add popmap.
                         } else {
                             $indId[-1] = $pop;
-                        }   
+                        }
+						if ($first) {print $out_fh_grp "$pop\n";}
                     } else {
                         if (!$has_pop) {
                             # warning, no pop indicator
