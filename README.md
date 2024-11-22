@@ -27,6 +27,9 @@ for ADMIXTURE or other Q-matrix:
 perl structure_selector.pl -i input_results_folder -p popmap.txt -a -c -o .
 ```
 
+## Online version
+https://lmme.ac.cn/StructureSelector
+
 ## Contact
 
 [Yulong Li](mailto:liyulong12@mails.ucas.ac.cn)
