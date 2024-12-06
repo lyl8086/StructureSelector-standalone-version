@@ -336,7 +336,9 @@ sub calc_str {
     store $clsts, "$out_path/${dir}clsts";
     store $ma, "$out_path/${dir}ma";
     store $qtable, "$out_path/${dir}qtable";
-    `mv $out_path/PopMap_for_admixture $out_path/${dir}pop.admixlabel`;
+    if (-e "$out_path/PopMap_for_admixture") {
+        `mv $out_path/PopMap_for_admixture $out_path/${dir}pop.admixlabel`;
+    }
     
     # output sum stat.
     # 1:popmap. 2: number of files. 
